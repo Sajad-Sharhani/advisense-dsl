@@ -29,6 +29,10 @@ This project implements a simple arithmetic expression parser and evaluator usin
    - Calling `root.evaluate()` returns a `number` or `boolean`.  
    - Calling `root.print()` returns a fully parenthesized infix string (whitespace normalized).
 
+4. **Serialization & Deserialization**
+   - To enable round-tripping an AST to a JSON-friendly format (and back), we added a `serialize()` method to each node class and a static `deserialize()` method on `Parser`. This makes it possible to save or transmit the AST structure in plain JSON and rebuild it later. Below is the relevant code.
+
+
 > **Note on Operator Precedence**  
 > - `*`, `/` have precedence level 2  
 > - `+`, `-` have precedence level 1  
